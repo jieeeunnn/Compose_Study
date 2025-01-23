@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "kr.co.compose_study"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "kr.co.compose_study"
