@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Compose_Study</string>
+
+    <string name="onboarding_image_text">온보딩 이미지</string>
 </resources>
