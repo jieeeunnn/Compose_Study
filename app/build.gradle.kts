@@ -77,4 +77,8 @@ dependencies {
     kapt(libs.hilt.compiler)
     implementation(libs.hilt.navigation.compose)
     implementation(libs.accompanist.systemuicontroller)
+
+    implementation(libs.moshi)
+    kapt(libs.moshi.kotlin.codegen)
+
 }

@@ -16,6 +16,7 @@ org-jetbrains-kotlin-android = "1.8.10"
 org-jetbrains-kotlin-jvm = "2.0.0"
 hiltNavigationCompose = "1.2.0"
 accompanistVersion = "0.30.1"
+moshiVersion = "1.15.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -38,6 +39,8 @@ hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt
 hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
 accompanist-systemuicontroller = { group = "com.google.accompanist", name = "accompanist-systemuicontroller", version.ref = "accompanistVersion" }
+moshi = { group = "com.squareup.moshi", name = "moshi", version.ref = "moshiVersion" }
+moshi-kotlin-codegen = { group = "com.squareup.moshi", name = "moshi-kotlin-codegen", version.ref = "moshiVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
