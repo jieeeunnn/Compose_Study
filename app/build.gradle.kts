@@ -81,4 +81,7 @@ dependencies {
     implementation(libs.moshi)
     kapt(libs.moshi.kotlin.codegen)
 
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.converter.gson)
+    implementation(libs.gson)
 }
