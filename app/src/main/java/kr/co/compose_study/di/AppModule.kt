@@ -7,9 +7,9 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import kr.co.compose_study.data.manager.LocalUserManagerImpl
 import kr.co.compose_study.domain.manager.LocalUserManager
-import kr.co.compose_study.domain.usecase.AppEntryUseCases
-import kr.co.compose_study.domain.usecase.ReadAppEntry
-import kr.co.compose_study.domain.usecase.SaveAppEntry
+import kr.co.compose_study.domain.usecase.app_entry.AppEntryUseCases
+import kr.co.compose_study.domain.usecase.app_entry.ReadAppEntry
+import kr.co.compose_study.domain.usecase.app_entry.SaveAppEntry
 import javax.inject.Singleton
 
 @Module
