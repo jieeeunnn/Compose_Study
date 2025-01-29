@@ -18,6 +18,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
@@ -31,7 +32,6 @@ import kr.co.compose_study.R
 import kr.co.compose_study.domain.model.Article
 import kr.co.compose_study.domain.model.Source
 import kr.co.compose_study.presentation.Dimens.ArticleCardSize
-import kr.co.compose_study.presentation.Dimens.ExtraSmallPadding
 import kr.co.compose_study.presentation.Dimens.ExtraSmallPadding2
 import kr.co.compose_study.presentation.Dimens.SmallIconSize
 import kr.co.compose_study.ui.theme.Compose_StudyTheme
@@ -54,13 +54,14 @@ fun ArticleCard(
                 .size(ArticleCardSize)
                 .clip(MaterialTheme.shapes.medium),
             model = ImageRequest.Builder(context).data(article.urlToImage).build(),
-            contentDescription = null
+            contentDescription = null,
+            contentScale = ContentScale.Crop
         )
 
         Column(
             verticalArrangement = Arrangement.SpaceAround,
             modifier = Modifier
-                .padding(horizontal = ExtraSmallPadding)
+                .padding(horizontal = ExtraSmallPadding2)
                 .height((ArticleCardSize))
         ) {
             Text(
