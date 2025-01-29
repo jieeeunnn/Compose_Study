@@ -15,6 +15,7 @@ import kr.co.compose_study.domain.usecase.app_entry.ReadAppEntry
 import kr.co.compose_study.domain.usecase.app_entry.SaveAppEntry
 import kr.co.compose_study.domain.usecase.news.GetNews
 import kr.co.compose_study.domain.usecase.news.NewsUseCases
+import kr.co.compose_study.domain.usecase.news.SearchNews
 import kr.co.compose_study.util.Constants.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -62,7 +63,8 @@ object AppModule {
         newsRepository: NewsRepository
     ): NewsUseCases {
         return NewsUseCases(
-            getNews = GetNews(newsRepository)
+            getNews = GetNews(newsRepository),
+            searchNews = SearchNews(newsRepository)
         )
     }
 }
