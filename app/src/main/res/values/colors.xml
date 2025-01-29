@@ -11,4 +11,5 @@
     <color name="display_small">#000000</color>
     <color name="text_medium">#666666</color>
     <color name="shimmer">#999999</color>
+    <color name="background">#FFFFFFFF</color>
 </resources>
