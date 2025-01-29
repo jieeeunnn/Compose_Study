@@ -2,4 +2,6 @@
     <string name="app_name">Compose_Study</string>
 
     <string name="onboarding_image_text">온보딩 이미지</string>
+
+    <string name="article_card_time_icon">time 아이콘</string>
 </resources>

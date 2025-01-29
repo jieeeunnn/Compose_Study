@@ -1,4 +1,4 @@
-package kr.co.compose_study.domain.usecase
+package kr.co.compose_study.domain.usecase.app_entry
 
 import kotlinx.coroutines.flow.Flow
 import kr.co.compose_study.domain.manager.LocalUserManager

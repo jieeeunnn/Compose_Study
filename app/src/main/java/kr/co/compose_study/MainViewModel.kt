@@ -9,7 +9,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import kr.co.compose_study.domain.usecase.AppEntryUseCases
+import kr.co.compose_study.domain.usecase.app_entry.AppEntryUseCases
 import kr.co.compose_study.presentation.navgraph.Route
 import javax.inject.Inject
 

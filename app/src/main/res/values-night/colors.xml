@@ -2,5 +2,6 @@
 <resources>
     <color name="display_small">#FFFFFF</color>
     <color name="text_medium">#949494</color>
-
+    <color name="shimmer">#BBBBBB</color>
+    <color name="background">#FF000000</color>
 </resources>

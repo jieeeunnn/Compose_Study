@@ -1,4 +1,4 @@
-package kr.co.compose_study.domain.usecase
+package kr.co.compose_study.domain.usecase.app_entry
 
 class AppEntryUseCases(
     val readAppEntry: ReadAppEntry,

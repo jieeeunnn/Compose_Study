@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import kr.co.compose_study.domain.usecase.AppEntryUseCases
+import kr.co.compose_study.domain.usecase.app_entry.AppEntryUseCases
 import javax.inject.Inject
 
 @HiltViewModel
