@@ -11,6 +11,8 @@ import kr.co.compose_study.presentation.home.HomeScreen
 import kr.co.compose_study.presentation.home.HomeViewModel
 import kr.co.compose_study.presentation.onboarding.OnBoardingScreen
 import kr.co.compose_study.presentation.onboarding.OnBoardingViewModel
+import kr.co.compose_study.presentation.search.SearchScreen
+import kr.co.compose_study.presentation.search.SearchViewModel
 
 @Composable
 fun NavGraph(
@@ -29,7 +31,7 @@ fun NavGraph(
             composable(
                 route = Route.OnBoardingScreen.route
             ) {
-                val viewModel : OnBoardingViewModel = hiltViewModel()
+                val viewModel: OnBoardingViewModel = hiltViewModel()
                 OnBoardingScreen(
                     event = viewModel::onEvent
                 )
@@ -41,10 +43,16 @@ fun NavGraph(
             startDestination = Route.NewsNavigatorScreen.route
         ) {
             composable(route = Route.NewsNavigatorScreen.route) {
-                val viewModel : HomeViewModel = hiltViewModel()
-                val articles = viewModel.news.collectAsLazyPagingItems()
+//                val viewModel : HomeViewModel = hiltViewModel()
+//                val articles = viewModel.news.collectAsLazyPagingItems()
+//
+//                HomeScreen(articles = articles, navigate = {})
 
-                HomeScreen(articles = articles, navigate = {})
+                val viewModel: SearchViewModel = hiltViewModel()
+                SearchScreen(
+                    state = viewModel.state.value,
+                    event = viewModel::onEvent,
+                    navigate = {})
             }
         }
     }
