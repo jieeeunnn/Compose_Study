@@ -2,5 +2,5 @@
 <resources>
     <color name="display_small">#FFFFFF</color>
     <color name="text_medium">#949494</color>
-
+    <color name="shimmer">#BBBBBB</color>
 </resources>
