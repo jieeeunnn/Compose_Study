@@ -4,4 +4,7 @@
     <string name="onboarding_image_text">온보딩 이미지</string>
 
     <string name="article_card_time_icon">time 아이콘</string>
+
+    <string name="details_top_bar_back_icon">뒤로 가기 아이콘</string>
+    <string name="details_screen_article_image">기사 이미지</string>
 </resources>

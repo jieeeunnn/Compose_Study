@@ -1,6 +1,5 @@
 package kr.co.compose_study.presentation.onboarding
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -26,7 +25,6 @@ import kr.co.compose_study.presentation.common.NewsTextButton
 import kr.co.compose_study.presentation.onboarding.component.OnBoardingPages
 import kr.co.compose_study.presentation.onboarding.component.PageIndicator
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun OnBoardingScreen(
     event: (OnBoardingEvent) -> Unit
@@ -95,7 +93,8 @@ fun OnBoardingScreen(
                                 )
                             }
                         }
-                    })
+                    }
+                )
             }
         }
         Spacer(modifier = Modifier.weight(0.5f))
