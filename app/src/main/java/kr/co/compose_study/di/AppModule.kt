@@ -1,10 +1,14 @@
 package kr.co.compose_study.di
 
 import android.app.Application
+import androidx.room.Room
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import kr.co.compose_study.data.local.NewsDao
+import kr.co.compose_study.data.local.NewsDatabase
+import kr.co.compose_study.data.local.NewsTypeConvertor
 import kr.co.compose_study.data.manager.LocalUserManagerImpl
 import kr.co.compose_study.data.remote.NewsApi
 import kr.co.compose_study.data.repository.NewsRepositoryImpl
@@ -17,6 +21,7 @@ import kr.co.compose_study.domain.usecase.news.GetNews
 import kr.co.compose_study.domain.usecase.news.NewsUseCases
 import kr.co.compose_study.domain.usecase.news.SearchNews
 import kr.co.compose_study.util.Constants.BASE_URL
+import kr.co.compose_study.util.Constants.NEWS_DATABASE_NAME
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -54,7 +59,7 @@ object AppModule {
     @Singleton
     fun provideNewsRepository(
         newsApi: NewsApi
-    ) : NewsRepository = NewsRepositoryImpl(newsApi)
+    ): NewsRepository = NewsRepositoryImpl(newsApi)
 
 
     @Provides
@@ -67,4 +72,24 @@ object AppModule {
             searchNews = SearchNews(newsRepository)
         )
     }
+
+    @Provides
+    @Singleton
+    fun provideNewsDatabase(
+        application: Application
+    ): NewsDatabase {
+        return Room.databaseBuilder(
+            context = application,
+            klass = NewsDatabase::class.java,
+            name = NEWS_DATABASE_NAME
+        ).addTypeConverter(NewsTypeConvertor())
+            .fallbackToDestructiveMigration()
+            .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideNewsDao(
+        newsDatabase: NewsDatabase
+    ): NewsDao = newsDatabase.newsDao
 }
