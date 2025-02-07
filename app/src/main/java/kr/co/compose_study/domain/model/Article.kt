@@ -1,9 +1,11 @@
 package kr.co.compose_study.domain.model
 
-
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
+@Entity
 @JsonClass(generateAdapter = true)
 data class Article(
     @Json(name = "author")
@@ -19,7 +21,7 @@ data class Article(
     @Json(name = "title")
     val title: String,
     @Json(name = "url")
-    val url: String,
+    @PrimaryKey val url: String,
     @Json(name = "urlToImage")
     val urlToImage: String
 )
