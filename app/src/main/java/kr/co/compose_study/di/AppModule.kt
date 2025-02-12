@@ -17,9 +17,12 @@ import kr.co.compose_study.domain.repository.NewsRepository
 import kr.co.compose_study.domain.usecase.app_entry.AppEntryUseCases
 import kr.co.compose_study.domain.usecase.app_entry.ReadAppEntry
 import kr.co.compose_study.domain.usecase.app_entry.SaveAppEntry
+import kr.co.compose_study.domain.usecase.news.DeleteArticle
 import kr.co.compose_study.domain.usecase.news.GetNews
 import kr.co.compose_study.domain.usecase.news.NewsUseCases
 import kr.co.compose_study.domain.usecase.news.SearchNews
+import kr.co.compose_study.domain.usecase.news.SelectArticles
+import kr.co.compose_study.domain.usecase.news.UpsertArticle
 import kr.co.compose_study.util.Constants.BASE_URL
 import kr.co.compose_study.util.Constants.NEWS_DATABASE_NAME
 import retrofit2.Retrofit
@@ -65,11 +68,15 @@ object AppModule {
     @Provides
     @Singleton
     fun provideNewsUseCases(
-        newsRepository: NewsRepository
+        newsRepository: NewsRepository,
+        newsDao: NewsDao
     ): NewsUseCases {
         return NewsUseCases(
             getNews = GetNews(newsRepository),
-            searchNews = SearchNews(newsRepository)
+            searchNews = SearchNews(newsRepository),
+            upsertArticle = UpsertArticle(newsDao),
+            deleteArticle = DeleteArticle(newsDao),
+            selectArticles = SelectArticles(newsDao),
         )
     }
 
