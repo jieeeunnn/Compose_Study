@@ -1,15 +1,18 @@
 package kr.co.compose_study.domain.model
 
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 @Entity
 @JsonClass(generateAdapter = true)
 data class Article(
     @Json(name = "author")
-    val author: String,
+    val author: String?,
     @Json(name = "content")
     val content: String,
     @Json(name = "description")
@@ -24,4 +27,4 @@ data class Article(
     @PrimaryKey val url: String,
     @Json(name = "urlToImage")
     val urlToImage: String
-)
+): Parcelable
