@@ -21,6 +21,7 @@ import kr.co.compose_study.domain.usecase.news.DeleteArticle
 import kr.co.compose_study.domain.usecase.news.GetNews
 import kr.co.compose_study.domain.usecase.news.NewsUseCases
 import kr.co.compose_study.domain.usecase.news.SearchNews
+import kr.co.compose_study.domain.usecase.news.SelectArticle
 import kr.co.compose_study.domain.usecase.news.SelectArticles
 import kr.co.compose_study.domain.usecase.news.UpsertArticle
 import kr.co.compose_study.util.Constants.BASE_URL
@@ -61,8 +62,9 @@ object AppModule {
     @Provides
     @Singleton
     fun provideNewsRepository(
-        newsApi: NewsApi
-    ): NewsRepository = NewsRepositoryImpl(newsApi)
+        newsApi: NewsApi,
+        newsDao: NewsDao
+    ): NewsRepository = NewsRepositoryImpl(newsApi, newsDao)
 
 
     @Provides
@@ -74,9 +76,10 @@ object AppModule {
         return NewsUseCases(
             getNews = GetNews(newsRepository),
             searchNews = SearchNews(newsRepository),
-            upsertArticle = UpsertArticle(newsDao),
-            deleteArticle = DeleteArticle(newsDao),
-            selectArticles = SelectArticles(newsDao),
+            upsertArticle = UpsertArticle(newsRepository),
+            deleteArticle = DeleteArticle(newsRepository),
+            selectArticles = SelectArticles(newsRepository),
+            selectArticle = SelectArticle(newsRepository)
         )
     }
 
