@@ -7,4 +7,6 @@
 
     <string name="details_top_bar_back_icon">뒤로 가기 아이콘</string>
     <string name="details_screen_article_image">기사 이미지</string>
+
+    <string name="bottom_nav_icon">네비게이션 아이콘 이미지</string>
 </resources>
